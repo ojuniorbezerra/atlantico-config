@@ -55,8 +55,10 @@ security:
       client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
       resource-ids: resources
       scope: read,write
-      
+
 spring:
+  main:
+    allow-bean-definition-overriding: true
   http:
     encoding:
       enabled: true
@@ -101,8 +103,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-  main:
-    allow-bean-definition-overriding: true
 
 
 
