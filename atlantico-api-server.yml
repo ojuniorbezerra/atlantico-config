@@ -15,11 +15,11 @@ eureka:
 
 info:
   app:
-    name: @project.name@
-    encoding: @project.build.sourceEncoding@
+    name: atlantico-api
+    encoding: UTF-8
     java:
-      source: @java.version@
-      target: @java.version@
+      source: 1.8
+      target: 1.8
 
 
 management:
