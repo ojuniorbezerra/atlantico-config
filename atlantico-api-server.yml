@@ -1,5 +1,8 @@
 server:
   port: 9094
+  servlet:
+    session:
+      timeout: 20
 
 eureka:
   instance:
@@ -37,11 +40,6 @@ management:
         include: '*'
 
 
-
-server:
-  servlet:
-    session:
-      timeout: 20
 
 spring:
   oauth2:
