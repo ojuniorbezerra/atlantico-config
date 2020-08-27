@@ -1,0 +1,110 @@
+server:
+  port: 9094
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+info:
+  app:
+    name: @project.name@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+
+management:
+  health:
+    diskspace:
+      enabled: false
+  info:
+    defaults:
+      enabled: false
+  endpoint: 
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: *
+
+
+
+server:
+  servlet:
+    session:
+      timeout: 20
+
+spring:
+  oauth2:
+    client:
+      access-token-validity-seconds: 1800
+      authorized-grant-types: password,refresh_token
+      client-id: atlantico
+      client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
+      resource-ids: resources
+      scope: read,write
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  data:
+    redis:
+    repositories:
+      type: none
+  session:
+    store-type: redis
+    timeout:
+      seconds: 20
+    redis:
+      repositories:
+        type: none
+      flush-mode: on-save
+      namespace: spring:session
+  redis:
+    host: localhost
+    password:
+    port: 6379
+  security:
+    user:
+      name: sergey
+      password: sergey
+      roles: manager
+  flyway:
+    locations=classpath: db/migration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  main:
+    allow:
+    bean-definition-overriding: true
+
+javainuse:
+  rabbitmq:
+    exchange: atlantico.exchange
+    queue: atlantico.queue
+    routingkey: atlantico.routingkey
+    
+
+
