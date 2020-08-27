@@ -1,13 +1,5 @@
 server:
   port: 9093
-  rabbitmq:
-        host: localhost
-        port: 5672
-        username: guest
-        password: guest
-  main:
-    allow:
-      bean-definition-overriding: true
 
 eureka:
   instance:
@@ -20,8 +12,22 @@ eureka:
   server:
     wait-time-in-ms-when-sync-empty: 3000
 
+
+spring:
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+    main:
+      allow:
+      bean-definition-overriding: true
+
 javainuse:
   rabbitmq:
     exchange: atlantico.exchange
     queue: atlantico.queue
     routingkey: atlantico.routingkey
+    
+
+
