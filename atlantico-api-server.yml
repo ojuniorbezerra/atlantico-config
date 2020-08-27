@@ -40,6 +40,12 @@ management:
         include: '*'
 
 
+javainuse:
+  rabbitmq:
+    exchange: atlantico.exchange
+    queue: atlantico.queue
+    routingkey: atlantico.routingkey
+    
 
 spring:
   oauth2:
@@ -97,11 +103,5 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-javainuse:
-  rabbitmq:
-    exchange: atlantico.exchange
-    queue: atlantico.queue
-    routingkey: atlantico.routingkey
-    
 
 
