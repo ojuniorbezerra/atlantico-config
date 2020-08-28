@@ -13,9 +13,11 @@ eureka:
   server:
     wait-time-in-ms-when-sync-empty: 3000
 
-
 spring:
     rabbitmq:
+      listener:
+        simple:
+          missing-queues-fatal: false
       host: localhost
       port: 5672
       username: guest
