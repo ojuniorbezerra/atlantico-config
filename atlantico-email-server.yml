@@ -7,24 +7,24 @@ eureka:
     port: 9091
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 3000
 
 spring:
-    rabbitmq:
-      listener:
-        simple:
-          missing-queues-fatal: false
-      host: localhost
-      port: 5672
-      username: guest
-      password: guest
-    main:
-      allow:
-      bean-definition-overriding: true
+  rabbitmq:
+    listener:
+      simple:
+        missing-queues-fatal: false
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  main:
+    allow:
+    bean-definition-overriding: true
 
 javainuse:
   rabbitmq:
