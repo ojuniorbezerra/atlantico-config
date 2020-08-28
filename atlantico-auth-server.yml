@@ -1,0 +1,86 @@
+server:
+  port: 9095
+  servlet:
+    session:
+      timeout: 20
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+info:
+  app:
+    name: atlantico-auth
+    encoding: UTF-8
+    java:
+      source: 1.8
+      target: 1.8
+
+
+management:
+  health:
+    diskspace:
+      enabled: false
+  info:
+    defaults:
+      enabled: false
+  endpoint: 
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: '*'
+
+
+
+security:
+  oauth2:
+    client:
+      access-token-validity-seconds: 1800
+      authorized-grant-types: password,refresh_token
+      client-id: atlantico
+      client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
+      resource-ids: resources
+      scope: read,write
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  data:
+    redis:
+    repositories:
+      type: none
+  session:
+    store-type: redis
+    timeout:
+      seconds: 20
+    redis:
+      repositories:
+        type: none
+      flush-mode: on-save
+      namespace: spring:session
+  redis:
+    host: localhost
+    password:
+    port: 6379
+  security:
+    user:
+      name: sergey
+      password: sergey
+      roles: manager
+
