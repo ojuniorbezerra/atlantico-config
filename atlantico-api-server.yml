@@ -6,7 +6,7 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: atlantico-eureka
     port: 9091
   client:
     registerWithEureka: true
@@ -51,7 +51,7 @@ security:
     client:
       access-token-validity-seconds: 1800
       authorized-grant-types: password,refresh_token
-      client-id: coderef
+      client-id: atlantico
       client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
       resource-ids: resources
       scope: read,write
@@ -88,7 +88,7 @@ spring:
       flush-mode: on-save
       namespace: spring:session
   redis:
-    host: localhost
+    host: redis
     password:
     port: 6379
   security:
@@ -99,7 +99,7 @@ spring:
   flyway:
     locations=classpath: db/migration
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest
