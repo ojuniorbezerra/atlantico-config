@@ -6,7 +6,7 @@ server:
 
 eureka:
   instance:
-    hostname: atlantico-eureka
+    hostname: localhost
     port: 9091
   client:
     registerWithEureka: true
@@ -88,7 +88,7 @@ spring:
       flush-mode: on-save
       namespace: spring:session
   redis:
-    host: redis
+    host: localhost
     password:
     port: 6379
   security:
