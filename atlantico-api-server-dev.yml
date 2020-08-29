@@ -57,6 +57,7 @@ security:
       scope: read,write
 
 spring:
+  profiles: dev
   main:
     allow-bean-definition-overriding: true
   http:
