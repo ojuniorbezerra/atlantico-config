@@ -55,6 +55,7 @@ security:
       client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
       resource-ids: resources
       scope: read,write
+      auth-server: http://localhost:9094
 
 spring:
   profiles: default
