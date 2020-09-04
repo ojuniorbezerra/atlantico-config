@@ -76,6 +76,8 @@ spring:
     console:
       enabled: true
       path: /h2
+      settings:
+        web-allow-others: true
   data:
     redis:
     repositories:
